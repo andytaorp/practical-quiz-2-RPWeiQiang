@@ -6,4 +6,18 @@ import React from "react";
  *
  * TODO: implement the Habit component here
  */
-export default function Habit() {}
+export default function Habit({habit,onDeleteHabit,onToggleHabit}) {
+    const habitStyle = {
+        textDecoration: habit.complete ? "line-through" : "",
+    }
+    return( <li>
+
+        <i className={!habit.complete?"fa-regular fa-square":"fa-solid fa-square-check"}  onClick={() => onToggleHabit(habit.id)}></i> 
+        <div style={habitStyle}>
+        {habit.habitName}
+        </div>
+        <button type="button" onClick={() => onDeleteHabit(habit.id)}>Delete</button>
+    </li>
+    )
+   
+}
