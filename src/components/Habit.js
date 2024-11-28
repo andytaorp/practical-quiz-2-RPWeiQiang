@@ -12,7 +12,7 @@ export default function Habit({habit,onDeleteHabit,onToggleHabit}) {
     }
     return( <li>
 
-        <i className={!habit.complete?"fa-regular fa-square":"fa-solid fa-square-check"}  onClick={() => onToggleHabit(habit.id)}></i> 
+        <input type="checkbox"  onClick={() => onToggleHabit(habit.id)}></input > 
         <div style={habitStyle}>
         {habit.habitName}
         </div>
