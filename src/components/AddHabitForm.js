@@ -7,6 +7,7 @@ export default function AddHabitForm({ onAddHabit }) {
     // TODO: write code to handle form submission
     e.preventDefault()
     const item={
+      
       id:Date.now(),
       habitName,
       complete:false,
