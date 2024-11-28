@@ -5,13 +5,8 @@ export default function AddHabitForm({ onAddHabit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!habitName.trim()) return; // Prevent empty habit addition
-    const item = {
-      id: Date.now().toString(), // Ensure unique ID
-      habitName,
-      complete: false,
-    };
-    onAddHabit(item);
+    if (!habitName) return; 
+    onAddHabit({ id: Date.now().toString(), habitName, complete: false });
     setHabitName("");
   };
   return (
